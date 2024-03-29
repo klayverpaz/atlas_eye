@@ -1,4 +1,4 @@
-atlas_ds-template
+Atlas EYE
 ==============================
 
 A short description of the project.
