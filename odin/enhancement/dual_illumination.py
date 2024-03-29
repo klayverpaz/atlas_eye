@@ -51,7 +51,7 @@ def fuse_exposure_corrected_images(
     return fused_images
 
 
-#@timer(return_execution_time=True)
+@timer(return_execution_time=False)
 def dual_illumination_estimation(image: np.ndarray) -> np.ndarray:
     """
     Estimates and corrects dual illumination in an image using a dual exposure correction method.

@@ -168,7 +168,8 @@ def correct_underexposure(
     return corrected_image
 
 
-#@timer(return_execution_time=True)
+@timer(return_execution_time=False)
+
 def low_light_image_enhancement(image: np.ndarray) -> np.ndarray:
     """
     Enhances a low-light image by correcting underexposure and applying gamma correction.

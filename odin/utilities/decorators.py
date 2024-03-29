@@ -33,7 +33,7 @@ def timer(func: Optional[Callable] = None, *, prefix: str = "", return_execution
         if return_execution_time:
             return result, execution_time
         else:
-            print(f"{prefix}{func.__name__} took {execution_time:.2f} seconds to complete.")
+            print(f"{prefix}{func.__name__} took {execution_time:.6f} seconds to complete.")
             return result
 
     return wrapper

@@ -2,13 +2,13 @@ from odin.utilities import timer
 
 import cv2
 import numpy as np
-from skimage.restoration import denoise_tv_chambolle
+from skimage.restoration import denoise_tv_chambolle, denoise_wavelet
 
 from odin.base import CONFIG
 
 class ImageEnhancer:
     
-    #@timer(return_execution_time=True)
+    @timer(return_execution_time=False)
     def histogram_equalization(image: np.ndarray) -> np.ndarray:
         """
         Apply histogram equalization to an image.
@@ -29,7 +29,7 @@ class ImageEnhancer:
 
         return equalized_image
     
-
+    @timer(return_execution_time=False)
     def CLAHE_contrast_limited_adaptative_histogram_equalization(input_image: np.ndarray) -> np.ndarray:
         """
         Apply Contrast Limited Adaptive Histogram Equalization (CLAHE) to an image.
@@ -52,6 +52,8 @@ class ImageEnhancer:
 
         return equalized_image
     
+    
+    @timer(return_execution_time=False)  
     def total_variance_denoising(image: np.ndarray) -> np.ndarray:
         total_variance_config = CONFIG.enhancement.total_variance
         denoised_image = denoise_tv_chambolle(
@@ -63,7 +65,7 @@ class ImageEnhancer:
 
         return clipped_image
     
-
+    @timer(return_execution_time=False)
     def bilateral_filter(image: np.ndarray) -> np.ndarray:
         """
         Apply a bilateral filter to an image.
@@ -90,8 +92,6 @@ class ImageEnhancer:
 
         return filtered_image
 
-
-# region MyRegion
-
-
-# endregion MyRegion
+    @timer(return_execution_time=False)
+    def denoWavelet(img1):
+        return denoise_wavelet(img1, mode="soft", rescale_sigma=True)
