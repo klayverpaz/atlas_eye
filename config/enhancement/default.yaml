@@ -1,0 +1,28 @@
+clahe:
+  clip_limit: 10.0
+  tile_grid_size: [8, 8]
+
+bilateral:
+  diameter: 5
+  sigma_color: 75
+  sigma_space: 75
+
+total_variance:
+  weight: 0.1
+
+lime:
+  gamma: 0.3
+  alpha: 0.1
+  sigma: 3
+  epsilon: 0.001
+  optimal_dimensions: [400, 400]
+
+dual:
+  gamma: 0.5
+  alpha: 0.1
+  sigma: 3
+  epsilon: 0.001
+  contrast_weight: 1
+  saturation_weight: 1
+  well_exposedness_weight: 1
+  optimal_dimensions: [400, 400]

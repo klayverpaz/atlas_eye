@@ -1,0 +1,29 @@
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+defaults:
+  - model: model1
+  - enhancement: 
+    - default
+  - _self_
+
+base:
+  image_suffix: png
+  seed: 34
+
+reports:
+  enhancement: reports\enhancement
+
+data:
+  raw: 
+    path: data\raw
+    train_samples: data\raw\train_val_list.txt
+    test_samples: data\raw\test_list.txt 
+  interim: data\interim\example.csv
+  processed:
+    path: data\processed
+
+project:
+  path: C:\Users\klayv\Atlas\atlas_eye
